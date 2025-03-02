@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{pc/fragments/header :: header}">
+  <title>GN특장서비스센터 | 광주특장</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body>
+<div th:replace="~{pc/fragments/bodyHeader :: bodyHeader}"></div>
+
+<div class="container">
+  <div class="left">
+    <img src="/images/home.jpeg" alt="이미지 공간">
+  </div>
+  <div class="right">
+    <div class="title">광주특장</div>
+    <div class="subtitle">광주특장수리, 광주특장사고, 광주특장수리, 전남특장</div>
+    <div class="buttons">
+
+      <!-- 전화 버튼 -->
+      <a class="button" onclick="showPopup()">
+        <img src="images/phone.png" alt="전화">
+        전화
+      </a>
+
+      <!-- 팝업 창 -->
+      <div class="overlay" id="overlay" onclick="hidePopup()"></div>
+
+      <div class="popup" id="popup">
+        <p>" 광주특장 " 입니다.</p>
+        <p>📞 전화연결은 모바일에서 가능합니다.</p>
+        <br>
+        <p><strong>010-5243-3064</strong></p>
+        <button onclick="hidePopup()">확인</button>
+      </div>
+
+      <!-- 카카오톡 버튼 -->
+      <a class="button" onclick="window.location.href='https://open.kakao.com/o/slNhaldh';">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111683.png" alt="카카오톡">
+        카카오톡
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<div class="info">
+  <strong>GN특장</strong>
+  <span>
+    GN특장서비스센터 주요작업내용<br>
+    특장1톤급(특장수리전문/보험수리/사고수리)<br>
+    수리기간특장차무료대차서비스<br>
+    무료전국픽업서비스(수리 전후)<br>
+    전국견인서비스<br>
+    1688-2178 / 1666-1347<br>
+    010-5243-3064
+  </span>
+</div>
+
+<div th:replace="~{pc/fragments/footer :: footer}"></div>
+
+<script>
+  function showPopup() {
+    document.getElementById('popup').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+  }
+
+  function hidePopup() {
+    document.getElementById('popup').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>

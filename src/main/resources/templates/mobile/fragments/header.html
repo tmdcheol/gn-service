@@ -10,27 +10,40 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      font-family: "Google Sans Text", Roboto, Helvetica, Arial, sans-serif;
     }
 
     .nav {
       display: flex;
       justify-content: center;
-      background-color: #880f0d;
+      background-color: white;
       padding: 10px 0;
     }
 
     .nav a {
-      color: white;
+      color: black;
       text-decoration: none;
       padding: 10px 20px;
       font-size: 16px;
+      position: relative; /* 밑줄을 위한 상대 위치 설정 */
     }
 
-    .nav a.active {
-      font-weight: bold;
-      text-decoration: underline;
+    .nav a::after {
+      content: ""; /* 가상 요소 생성 */
+      position: absolute;
+      left: 0;
+      bottom: -2px; /* 글자 아래에 위치 */
+      width: 0;
+      height: 2px;
+      background-color: black; /* 밑줄 색상 */
+      transition: width 0.3s ease-in-out; /* 부드러운 애니메이션 */
     }
+
+    /* 마우스를 올리면 밑줄이 나타남 */
+    .nav a:hover::after {
+      width: 100%;
+    }
+
 
     .info {
       background-color: #ffffff;
@@ -58,13 +71,14 @@
       width: 100%;
       max-width: 600px;
       height: 300px;
-      background-color: #880f0d;
+      background-color: #eef0f3;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 0;
+      border-radius: 40px;
       overflow: hidden;
-      margin: 20px auto;
+      margin: 40px auto;
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
     }
 
     .left {
@@ -77,9 +91,12 @@
     }
 
     .left img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      /*      width: 100%;
+            height: 100%;
+            object-fit: cover;*/
+      max-width: 100%;
+      height: auto;
+      display: block; /* 불필요한 공백 제거 */
     }
 
     .right {
@@ -89,13 +106,13 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
-      color: white;
+      color: black;
       text-align: left;
       padding: 20px;
     }
 
     .title {
-      font-size: 26px;
+      font-size: 20px;
       font-weight: bold;
       margin-bottom: 10px;
     }
@@ -113,44 +130,45 @@
     }
 
     .button {
-      width: 45px;
-      height: 45px;
-      background-color: #660c0a;
       display: flex;
+      flex-direction: column; /* 이미지 위, 텍스트 아래 배치 */
       align-items: center;
       justify-content: center;
-      border-radius: 0;
+      width: 80px;
+      height: 96px;
+      background-color: #eef0f3;
+      border-radius: 10px; /* 버튼 둥글게 */
+      text-align: center;
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
+      border: none;
     }
 
     .button img {
-      width: 30px;
-      height: 30px;
+      width: 40px; /* 이미지 크기 */
+      height: 40px;
+      margin-bottom: 7px; /* 이미지와 글자 사이 간격 */
+    }
+
+    .button:hover {
+      background-color: #dfe4ec; /* 호버 시 배경색 진하게 */
     }
 
     .footer {
-      background-color: #f4f4f4;
+      background-color: white;
       padding: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-top: 1px solid #ccc;
     }
 
     .footer .left-text {
       font-size: 12px;
       line-height: 1.5;
       color: #333;
-    }
-
-    .footer .right-image {
-      display: flex;
-      align-items: center;
-    }
-
-    .footer .right-image img {
-      width: 100px;
-      margin-right: 10px;
     }
 
     .popup {

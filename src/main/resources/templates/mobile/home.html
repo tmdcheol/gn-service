@@ -1,12 +1,48 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments/header :: header}">
+<head th:replace="~{mobile/fragments/header :: header}">
   <title>GN특장서비스센터 | 광주특장</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 
 <body>
-<div th:replace="~{fragments/bodyHeader :: bodyHeader}"></div>
+<div th:replace="~{mobile/fragments/bodyHeader :: bodyHeader}"></div>
+
+<div class="container">
+  <div class="left">
+    <img src="/images/home.jpeg" alt="이미지 공간">
+  </div>
+  <div class="right">
+    <div class="title">광주특장</div>
+    <div class="subtitle">광주특장수리, 광주특장사고, 광주특장수리, 전남특장</div>
+    <div class="buttons">
+
+      <!-- 전화 버튼 -->
+      <a class="button" onclick="showPopup()">
+        <img src="images/phone.png" alt="전화">
+        전화
+      </a>
+
+      <!-- 팝업 창 -->
+      <div class="overlay" id="overlay" onclick="hidePopup()"></div>
+
+      <div class="popup" id="popup">
+        <p>" 광주특장 " 입니다.</p>
+        <p>📞 전화연결은 모바일에서 가능합니다.</p>
+        <br>
+        <p><strong>010-5243-3064</strong></p>
+        <button onclick="hidePopup()">확인</button>
+      </div>
+
+      <!-- 카카오톡 버튼 -->
+      <a class="button" onclick="window.location.href='https://open.kakao.com/o/slNhaldh';">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111683.png" alt="카카오톡">
+        카카오톡
+      </a>
+
+    </div>
+  </div>
+</div>
 
 <div class="info">
   <strong>GN특장</strong>
@@ -21,41 +57,7 @@
   </span>
 </div>
 
-<div class="container">
-  <div class="left">
-    <img src="https://via.placeholder.com/150" alt="이미지 공간">
-  </div>
-  <div class="right">
-    <div class="title">광주특장</div>
-    <div class="subtitle">광주특장수리, 광주특장사고, 광주특장수리, 전남특장</div>
-    <div class="buttons">
-
-      <!-- 전화 버튼 -->
-      <div class="button" onclick="showPopup()">
-        <img src="https://cdn-icons-png.flaticon.com/512/159/159832.png" alt="전화">
-      </div>
-
-      <!-- 팝업 창 -->
-      <div class="overlay" id="overlay" onclick="hidePopup()"></div>
-
-      <div class="popup" id="popup">
-        <p>" 광주특장 " 입니다.</p>
-        <p>📞 전화연결은 모바일에서 가능합니다.</p>
-        <br>
-        <p><strong>010-5243-3064</strong></p>
-        <button onclick="hidePopup()">확인</button>
-      </div>
-
-      <!-- 카카오톡 버튼 -->
-      <div class="button" onclick="window.location.href='https://open.kakao.com/o/slNhaldh';">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111683.png" alt="카카오톡">
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div th:replace="~{fragments/footer :: footer}"></div>
+<div th:replace="~{mobile/fragments/footer :: footer}"></div>
 
 <script>
   function showPopup() {
