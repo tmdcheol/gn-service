@@ -12,8 +12,8 @@ public class DeviceInterceptor implements HandlerInterceptor {
     private static final String MOBILE_REGEX = ".*(Mobile|Android|iPhone|iPad).*";
 
     private static final String KEY = "deviceView";
-    private static final String MOBILE_PATH = "/mobile/home";
-    private static final String PC_PATH = "/pc/home";
+    private static final String MOBILE_PATH = "mobile/home";
+    private static final String PC_PATH = "pc/home";
 
     @Override
     public boolean preHandle(
